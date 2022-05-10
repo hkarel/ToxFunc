@@ -1,5 +1,5 @@
 #include "tox_error.h"
-#include "commands/error.h"
+#include "pproto_error.h"
 
 #include <QtGlobal>
 #include <QObject>
