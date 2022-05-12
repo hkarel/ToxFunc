@@ -17,6 +17,18 @@ DECL_ERROR_CODE(tox_err_file_send_chunk,       0, "2df2a88e-b035-45aa-8404-060c1
 DECL_ERROR_CODE(tox_err_friend_add,            0, "d850be4b-c8d4-44f1-b99e-e1dc0657be31", "TOX_ERR_FRIEND_ADD")
 
 DECL_ERROR_CODE(save_tox_state,               10, "378ff889-099b-485b-aed9-340c9d902b80", QT_TRANSLATE_NOOP("ToxNet", "An error occurred when saved tox state"))
+DECL_ERROR_CODE(save_tox_profile,             10, "486cd166-f6af-49c9-8247-a2f3b41750f4", QT_TRANSLATE_NOOP("ToxNet", "An error occurred when saved tox profile"))
+DECL_ERROR_CODE(save_tox_avatar,              10, "5ca769a6-2263-4ed3-bab3-1e66a44115c7", QT_TRANSLATE_NOOP("ToxNet", "An error occurred when saved tox avatar"))
+DECL_ERROR_CODE(tox_id_length,                10, "4ccc0fd2-5741-497a-aae3-408f14a36e56", QT_TRANSLATE_NOOP("ToxNet", "Invalid Tox ID length, should be %1 symbols"))
+DECL_ERROR_CODE(tox_id_format,                10, "0afdd1c3-3444-4b9f-ae98-78fbbb51eb43", QT_TRANSLATE_NOOP("ToxNet", "Invalid Tox ID format"))
+DECL_ERROR_CODE(tox_id_checksumm,             10, "f4e76704-9842-4b0d-b3bc-09381bd99c55", QT_TRANSLATE_NOOP("ToxNet", "Invalid Tox ID checksumm"))
+DECL_ERROR_CODE(tox_message_request,          10, "41bb9ecb-f44b-4c50-a585-f4783390e463", QT_TRANSLATE_NOOP("ToxNet", "You need to write a message with your request"))
+DECL_ERROR_CODE(tox_message_too_long,         10, "d4b84abf-108a-4c40-8523-6c9defa4cdd9", QT_TRANSLATE_NOOP("ToxNet", "Your message is too long! Maximum length %1 symbols"))
+DECL_ERROR_CODE(tox_friend_already_addedg,    10, "23593c3b-6368-41b1-9c69-84c17f44a28b", QT_TRANSLATE_NOOP("ToxNet", "Friend is already added"))
+DECL_ERROR_CODE(tox_request_friendship,       10, "74afb540-6c9b-42cb-9223-fcf62b5be2ba", QT_TRANSLATE_NOOP("ToxNet", "Failed to request friendship. Friend id: %1"))
+DECL_ERROR_CODE(tox_add_friend,               10, "96589658-ea9e-4e2b-b4b8-7a474ae7047b", QT_TRANSLATE_NOOP("ToxNet", "Failed add friend"))
+DECL_ERROR_CODE(tox_remove_friend,            10, "d0737547-9a1b-4bff-970b-c1325c849e64", QT_TRANSLATE_NOOP("ToxNet", "Failed remove friend %1"))
+DECL_ERROR_CODE(tox_friend_found,             10, "4d322162-ec06-4567-9249-0ab8cdc9409a", QT_TRANSLATE_NOOP("ToxNet", "Friend %1 not found"))
 
 } // namespace error
 } // namespace pproto
