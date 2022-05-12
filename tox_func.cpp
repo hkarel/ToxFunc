@@ -107,67 +107,6 @@ TOX_CONNECTION getFriendConnectStatus(Tox* tox, uint32_t friendNumber)
     return tox_friend_get_connection_status(tox, friendNumber, 0);
 }
 
-//bool sendToxLosslessMessage(Tox* tox, uint32_t friendNumber,
-//                            const communication::Message::Ptr& message)
-//{
-//    if ((message->size() + sizeof(toxPhoneMessageSignature) + 1) > TOX_MAX_CUSTOM_PACKET_SIZE)
-//    {
-//        message->compress();
-//        if ((message->size() + sizeof(toxPhoneMessageSignature) + 1) > TOX_MAX_CUSTOM_PACKET_SIZE)
-//        {
-//            log_error_m << toxError(TOX_ERR_FRIEND_CUSTOM_PACKET_TOO_LONG).description;
-//            return false;
-//        }
-//    }
-
-//    QByteArray buff;
-//    buff.reserve(message->size() + sizeof(toxPhoneMessageSignature) + 1);
-//    {
-//        QDataStream stream {&buff, QIODevice::WriteOnly};
-//        STREAM_INIT(stream)
-//        quint8 toxCommand = 160; // Идентификатор пользовательской tox-команды
-//        stream << toxCommand;
-//        stream << toxPhoneMessageSignature;
-//        message->toDataStream(stream);
-//    }
-
-//    ToxGlobalLock toxGlobalLock; (void) toxGlobalLock;
-
-//    TOX_ERR_FRIEND_CUSTOM_PACKET err;
-//    tox_friend_send_lossless_packet(tox, friendNumber, (uint8_t*)buff.constData(),
-//                                    buff.length(), &err);
-//    if (err != TOX_ERR_FRIEND_CUSTOM_PACKET_OK)
-//    {
-//        log_error_m << toxError(err).description;
-//        return false;
-//    }
-//    return true;
-//}
-
-//const communication::Message::Ptr readToxMessage(Tox* tox, uint32_t friendNumber,
-//                                                 const uint8_t* data, size_t length)
-//{
-//    QByteArray buff {QByteArray::fromRawData((char*)data, length)};
-//    QDataStream stream {&buff, QIODevice::ReadOnly | QIODevice::Unbuffered};
-//    STREAM_INIT(stream)
-//    quint8 toxCommand; (void) toxCommand;
-//    quint64 toxPhoneSign;
-//    stream >> toxCommand;
-//    stream >> toxPhoneSign;
-//    if (toxPhoneSign != toxPhoneMessageSignature)
-//    {
-//        if (alog::logger().level() == alog::Level::Debug2)
-//        {
-//            log_debug2_m << "Raw message incompatible signature, discarded"
-//                         << ". Message from " << ToxFriendLog(tox, friendNumber);
-//        }
-//        return communication::Message::Ptr();
-//    }
-//    communication::Message::Ptr message {communication::Message::fromDataStream(stream)};
-//    message->setAuxiliary(friendNumber);
-//    return std::move(message);
-//}
-
 const char* toString(TOX_CONNECTION val)
 {
     switch (val)
